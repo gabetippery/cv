@@ -1,1324 +1,471 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="creator" content="Marked.app"/>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<title>gabe tippery</title>
+</head>
 <style>
-/*! chota.css v0.8.0 | MIT License | github.com/jenil/chota */
-:root {
-  --bg-color: #DEE5E9;
-  --bg-secondary-color: #f3f3f6;
-  --color-primary: #bb0000;
-  --color-lightGrey: #d2d6dd;
-  --color-grey: #747681;
-  --color-darkGrey: #3f4144;
-  --color-error: #d43939;
-  --color-success: #28bd14;
-  --grid-maxWidth: 120rem;
-  --grid-gutter: 2rem;
-  --font-size: 1.4rem;
-  --font-color: #333333;
-  --font-family-serif: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-  --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px; /* Set a maximum width for the container */
+  background-color: white; 
 }
-html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 62.5%;
-  line-height: 1.15;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-lightGrey) var(--bg-primary);
-}
-*::-webkit-scrollbar {
-  width: 8px;
-}
-*::-webkit-scrollbar-track {
-  background: var(--bg-primary);
-}
-*::-webkit-scrollbar-thumb {
-  background: var(--color-lightGrey);
-}
+
+/* Set default font family to a serif typeface */
 body {
-  background-color: var(--bg-color);
-  line-height: 1.4;
-  font-size: var(--font-size);
-  color: var(--font-color);
-  font-family: "Segoe UI", "Helvetica Neue", sans-serif; /*fallback*/
-  font-family: var(--font-family-sans);
-  margin: 0;
-  padding: 0;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  background-color: #F3F3F3; 
+  color: #283747;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  margin: -0.25em 0 0.5em 0;
+
+/* Set font size, line height, and margin for paragraphs */
+p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
+
+/* Set font size and line height for headings */
 h1 {
-  font-size: 2.5em;
-  margin: 25px 0 0 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  
 }
 h2 {
-  font-size: 1.5em;
-}
-h3 {
-  font-size: 1.25em;
-}
-h4 {
-  font-size: 1em;
-}
-h5 {
-  font-size: 0.95em;
-}
-h6 {
-  font-size: 0.85em;
-}
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-a:hover:not(.button) {
-  opacity: 0.75;
-}
-button {
-  font-family: inherit;
-}
-p {
-  margin-top: 0;
-}
-blockquote {
-  background-color: var(--bg-secondary-color);
-  padding: 1.5rem 2rem;
-  border-left: 3px solid var(--color-lightGrey);
-}
-dl dt {
-  font-weight: bold;
-}
-hr {
-  border: none;
-  background-color: #333333;
-  height: 1px;
-  margin: 3rem 0 1.5rem 0;
-}
-ul {
-  margin: 0 0 0 20px;
-  padding: 0;
-}
-
-}
-table {
-  width: 100%;
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  text-align: left;
-}
-table.striped tr:nth-of-type(2n) {
-  background-color: var(--bg-secondary-color);
-}
-td,
-th {
-  vertical-align: middle;
-  padding: 1.2rem 0.4rem;
-}
-thead {
-  border-bottom: 2px solid var(--color-lightGrey);
-}
-tfoot {
-  border-top: 2px solid var(--color-lightGrey);
-}
-code,
-kbd,
-pre,
-samp,
-tt {
-  font-family: var(--font-family-mono);
-}
-code,
-kbd {
-  padding: 0 0.4rem;
-  font-size: 90%;
-  white-space: pre-wrap;
-  border-radius: 4px;
-  padding: 0.2em 0.4em;
-  background-color: var(--bg-secondary-color);
-  color: var(--color-error);
-}
-pre {
-  background-color: var(--bg-secondary-color);
-  font-size: 1em;
-  padding: 1rem;
-  overflow-x: auto;
-}
-pre code {
-  background: none;
-  padding: 0;
-}
-abbr[title] {
-  border-bottom: none;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
 }
-img {
-  max-width: 100%;
-}
-fieldset {
-  border: 1px solid var(--color-lightGrey);
-}
-iframe {
-  border: 0;
-}
-.large {
-	font-size: 2.7em;
-	line-height: 1.1;
-	font-weight: 700;
-}
-.container {
-    max-width: var(--grid-maxWidth);
-    margin: 0 auto;
-    width: 96%;
-    padding: 0 calc(var(--grid-gutter) / 2);
-}
-.row {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    margin-left: calc(var(--grid-gutter) / -2);
-    margin-right: calc(var(--grid-gutter) / -2);
-}
-.row.reverse {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-}
-.col {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-}
-.col,
-[class*=" col-"],
-[class^='col-'] {
-    margin: 0 calc(var(--grid-gutter) / 2) calc(var(--grid-gutter) / 2);
-}
-.col-1 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-    max-width: calc((100% / (12/1)) - var(--grid-gutter));
-}
-.col-2 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-    max-width: calc((100% / (12/2)) - var(--grid-gutter));
-}
-.col-3 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-    max-width: calc((100% / (12/3)) - var(--grid-gutter));
-}
-.col-4 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-    max-width: calc((100% / (12/4)) - var(--grid-gutter));
-}
-.col-5 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-    max-width: calc((100% / (12/5)) - var(--grid-gutter));
-}
-.col-6 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-    max-width: calc((100% / (12/6)) - var(--grid-gutter));
-}
-.col-7 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-    max-width: calc((100% / (12/7)) - var(--grid-gutter));
-}
-.col-8 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-    max-width: calc((100% / (12/8)) - var(--grid-gutter));
-}
-.col-9 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-    max-width: calc((100% / (12/9)) - var(--grid-gutter));
-}
-.col-10 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-    max-width: calc((100% / (12/10)) - var(--grid-gutter));
-}
-.col-11 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-    max-width: calc((100% / (12/11)) - var(--grid-gutter));
-}
-.col-12 {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-            flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-    max-width: calc((100% / (12/12)) - var(--grid-gutter));
-}
-@media screen and (max-width: 599px) {
-    .container {
-        width: 100%;
-    }
 
-    .col,
-    [class*="col-"],
-    [class^='col-'] {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 1 100%;
-                flex: 0 1 100%;
-        max-width: 100%;
-    }
-}
-@media screen and (min-width: 900px) {
-    .col-1-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-        max-width: calc((100% / (12/1)) - var(--grid-gutter));
-    }
 
-    .col-2-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-        max-width: calc((100% / (12/2)) - var(--grid-gutter));
-    }
-
-    .col-3-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-        max-width: calc((100% / (12/3)) - var(--grid-gutter));
-    }
-
-    .col-4-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-        max-width: calc((100% / (12/4)) - var(--grid-gutter));
-    }
-
-    .col-5-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-        max-width: calc((100% / (12/5)) - var(--grid-gutter));
-    }
-
-    .col-6-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-        max-width: calc((100% / (12/6)) - var(--grid-gutter));
-    }
-
-    .col-7-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-        max-width: calc((100% / (12/7)) - var(--grid-gutter));
-    }
-
-    .col-8-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-        max-width: calc((100% / (12/8)) - var(--grid-gutter));
-    }
-
-    .col-9-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-        max-width: calc((100% / (12/9)) - var(--grid-gutter));
-    }
-
-    .col-10-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-        max-width: calc((100% / (12/10)) - var(--grid-gutter));
-    }
-
-    .col-11-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-        max-width: calc((100% / (12/11)) - var(--grid-gutter));
-    }
-
-    .col-12-md {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-        max-width: calc((100% / (12/12)) - var(--grid-gutter));
-    }
-}
-@media screen and (min-width: 1200px) {
-    .col-1-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/1)) - var(--grid-gutter));
-        max-width: calc((100% / (12/1)) - var(--grid-gutter));
-    }
-
-    .col-2-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/2)) - var(--grid-gutter));
-        max-width: calc((100% / (12/2)) - var(--grid-gutter));
-    }
-
-    .col-3-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/3)) - var(--grid-gutter));
-        max-width: calc((100% / (12/3)) - var(--grid-gutter));
-    }
-
-    .col-4-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/4)) - var(--grid-gutter));
-        max-width: calc((100% / (12/4)) - var(--grid-gutter));
-    }
-
-    .col-5-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/5)) - var(--grid-gutter));
-        max-width: calc((100% / (12/5)) - var(--grid-gutter));
-    }
-
-    .col-6-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/6)) - var(--grid-gutter));
-        max-width: calc((100% / (12/6)) - var(--grid-gutter));
-    }
-
-    .col-7-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/7)) - var(--grid-gutter));
-        max-width: calc((100% / (12/7)) - var(--grid-gutter));
-    }
-
-    .col-8-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/8)) - var(--grid-gutter));
-        max-width: calc((100% / (12/8)) - var(--grid-gutter));
-    }
-
-    .col-9-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/9)) - var(--grid-gutter));
-        max-width: calc((100% / (12/9)) - var(--grid-gutter));
-    }
-
-    .col-10-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/10)) - var(--grid-gutter));
-        max-width: calc((100% / (12/10)) - var(--grid-gutter));
-    }
-
-    .col-11-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/11)) - var(--grid-gutter));
-        max-width: calc((100% / (12/11)) - var(--grid-gutter));
-    }
-
-    .col-12-lg {
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-                flex: 0 0 calc((100% / (12/12)) - var(--grid-gutter));
-        max-width: calc((100% / (12/12)) - var(--grid-gutter));
-    }
-}
-fieldset {
-  padding: 0.5rem 2rem;
-}
-legend {
-  text-transform: uppercase;
-  font-size: 0.8em;
-  letter-spacing: 0.1rem;
-}
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-select,
-textarea,
-textarea[type="text"] {
-  font-family: inherit;
-  padding: 0.8rem 1rem;
-  border-radius: 4px;
-  border: 1px solid var(--color-lightGrey);
-  font-size: 1em;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  display: block;
-  width: 100%;
-}
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]):not(:disabled):hover,
-select:hover,
-textarea:hover,
-textarea[type="text"]:hover {
-  border-color: var(--color-grey);
-}
-input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]):focus,
-select:focus,
-textarea:focus,
-textarea[type="text"]:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  -webkit-box-shadow: 0 0 1px var(--color-primary);
-          box-shadow: 0 0 1px var(--color-primary);
-}
-input.error:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-textarea.error {
-  border-color: var(--color-error);
-}
-input.success:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="color"]):not([type="button"]):not([type="reset"]),
-textarea.success {
-  border-color: var(--color-success);
-}
-select {
-  -webkit-appearance: none;
-  background: #f3f3f6 no-repeat 100%;
-  background-size: 1ex;
-  background-origin: content-box;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='40' fill='%23555'><polygon points='0,0 60,0 30,40'/></svg>");
-}
-[type="checkbox"],
-[type="radio"] {
-  width: 1.6rem;
-  height: 1.6rem;
-}
-/* BUTTONS */
-.button,
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
-  padding: 1rem 2.5rem;
-  color: var(--color-darkGrey);
-  background: var(--color-lightGrey);
-  border-radius: 4px;
-  border: 1px solid transparent;
-  font-size: var(--font-size);
-  line-height: 1;
-  text-align: center;
-  -webkit-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease;
+/* Set font size and line height for links */
+a {
+  color: #932432;
   text-decoration: none;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  display: inline-block;
-  cursor: pointer;
 }
-.grouped {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.grouped > *:not(:last-child) {
-  margin-right: 16px;
-}
-.grouped.gapless > * {
-  margin: 0 0 0 -1px !important;
-  border-radius:0 !important;
-}
-.grouped.gapless > *:first-child {
-  margin: 0 !important;
-  border-radius:4px 0 0 4px !important;
-}
-.grouped.gapless > *:last-child {
-  border-radius:0 4px 4px 0 !important;
-}
-.button + .button {
-  margin-left: 1rem;
-}
-.button:hover,
-[type="button"]:hover,
-[type="reset"]:hover,
-[type="submit"]:hover,
-button:hover {
-  opacity: 0.8;
-}
-.button:active,
-[type="button"]:active,
-[type="reset"]:active,
-[type="submit"]:active,
-button:active {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-}
-input:disabled,
-button:disabled,
-input:disabled:hover,
-button:disabled:hover {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-.button.primary,
-.button.secondary,
-.button.dark,
-.button.error,
-.button.success,
-[type="submit"] {
-  color: #fff;
-  z-index: 1; /* hightlight from other button's border when grouped */
-  background-color: #000;
-  background-color: var(--color-primary);
-}
-.button.secondary {
-  background-color: var(--color-grey);
-}
-.button.dark {
-  background-color: var(--color-darkGrey);
-}
-.button.error {
-  background-color: var(--color-error);
-}
-.button.success {
-  background-color: var(--color-success);
-}
-.button.outline {
-  background-color: transparent;
-  border-color: var(--color-lightGrey);
-}
-.button.outline.primary {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-.button.outline.secondary {
-  border-color: var(--color-grey);
-  color: var(--color-grey);
-}
-.button.outline.dark {
-  border-color: var(--color-darkGrey);
-  color: var(--color-darkGrey);
-}
-.button.clear {
-  background-color: transparent;
-  border-color: transparent;
-  color: var(--color-primary);
-}
-.button.icon {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.button.icon > img {
-  margin-left: 2px;
-}
-.button.icon-only {
-  padding: 1rem;
-}
-::-webkit-input-placeholder {
-  color: #bdbfc4;
-}
-::-moz-placeholder {
-  color: #bdbfc4;
-}
-:-ms-input-placeholder {
-  color: #bdbfc4;
-}
-::-ms-input-placeholder {
-  color: #bdbfc4;
-}
-::placeholder {
-  color: #bdbfc4;
-}
-.nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    min-height: 5rem;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-}
-.nav img {
-    max-height: 3rem;
-}
-.nav>.container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-.nav-center,
-.nav-left,
-.nav-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-}
-.nav-left {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-}
-.nav-right {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-}
-.nav-center {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-@media screen and (max-width: 480px) {
-    .nav,
-    .nav>.container {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
-    .nav-center,
-    .nav-left,
-    .nav-right {
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-    }
-}
-.nav a,
-.nav .brand {
-    text-decoration: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding: 1rem 2rem;
-    color: var(--color-darkGrey);
-}
-.nav [aria-current="page"]:not(.button),
-.nav .active:not(.button) {
-    color: #000; /* fallback */
-    color: var(--color-primary);
-}
-.nav .brand {
-    font-size: 1.75em;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-.nav .brand img {
-    padding-right: 1rem;
-}
-.nav .button {
-    margin: auto 1rem;
-}
-.card {
-  padding: 1rem 2rem;
-  border-radius: 4px;
-  background: var(--bg-color);
-  -webkit-box-shadow: 0 1px 3px var(--color-grey);
-          box-shadow: 0 1px 3px var(--color-grey);
-}
-.card p:last-child {
-  margin: 0;
-}
-.card header > * {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-.tabs {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-.tabs a {
-    text-decoration: none;
-}
-.tabs > .dropdown > summary,
-.tabs > a {
-    padding: 1rem 2rem;
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-    color: var(--color-darkGrey);
-    border-bottom: 2px solid var(--color-lightGrey);
-    text-align: center;
-}
-.tabs > a[aria-current="page"],
-.tabs > a.active,
-.tabs > a:hover {
-    opacity: 1;
-    border-bottom: 2px solid var(--color-darkGrey);
-}
-.tabs > a[aria-current="page"],
-.tabs > a.active {
-    border-color: var(--color-primary);
-}
-.tabs.is-full a {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-}
-.tag {
-  display: inline-block;
-  border: 1px solid var(--color-lightGrey);
-  text-transform: uppercase;
-  color: var(--color-grey);
-  padding: 0.5rem;
-  line-height: 1;
-  letter-spacing: 0.5px;
-}
-.tag.is-small {
-  padding: 0.4rem;
-  font-size: 0.75em;
-}
-.tag.is-large {
-  padding: 0.7rem;
-  font-size: 1.125em;
-}
-.tag+.tag {
-  margin-left: 1rem;
-}
-details.dropdown {
-  position: relative;
-  display: inline-block;
-}
-details.dropdown > :last-child {
-  position: absolute;
-  left: 0;
-  white-space: nowrap;
-}
-/* Colors */
-.bg-primary {
-    background-color: var(--color-primary) !important;
-}
-.bg-light {
-    background-color: var(--color-lightGrey) !important;
-}
-.bg-dark {
-    background-color: var(--color-darkGrey) !important;
-}
-.bg-grey {
-    background-color: var(--color-grey) !important;
-}
-.bg-error {
-    background-color: var(--color-error) !important;
-}
-.bg-success {
-    background-color: var(--color-success) !important;
-}
-.bd-primary {
-    border: 1px solid var(--color-primary) !important;
-}
-.bd-light {
-    border: 1px solid var(--color-lightGrey) !important;
-}
-.bd-dark {
-    border: 1px solid var(--color-darkGrey) !important;
-}
-.bd-grey {
-    border: 1px solid var(--color-grey) !important;
-}
-.bd-error {
-    border: 1px solid var(--color-error) !important;
-}
-.bd-success {
-    border: 1px solid var(--color-success) !important;
-}
-.text-primary {
-    color: var(--color-primary) !important;
-}
-.text-light {
-    color: var(--color-lightGrey) !important;
-}
-.text-dark {
-    color: var(--color-darkGrey) !important;
-}
-.text-grey {
-    color: var(--color-grey) !important;
-}
-.text-error {
-    color: var(--color-error) !important;
-}
-.text-success {
-    color: var(--color-success) !important;
-}
-.text-white {
-    color: #fff !important;
-}
-/* Position &alignment */
-.pull-right {
-    float: right !important;
-}
-.pull-left {
-    float: left !important;
-}
-.text-center {
-    text-align: center;
-}
-.text-left {
-    text-align: left;
-}
-.text-right {
-    text-align: right;
-}
-.text-justify {
-    text-align: justify;
-}
-.text-uppercase {
-    text-transform: uppercase;
-}
-.text-lowercase {
-    text-transform: lowercase;
-}
-.text-capitalize {
-    text-transform: capitalize;
-}
-.is-full-screen {
-    width: 100%;
-    min-height: 100vh;
-}
-.is-full-width {
-    width: 100% !important;
-}
-.is-vertical-align {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.is-horizontal-align {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-.is-center {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-.is-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-}
-.is-left {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-}
-.is-fixed {
-    position: fixed;
-    width: 100%;
-}
-.is-paddingless {
-    padding: 0 !important;
-}
-.is-marginless {
-    margin: 0 !important;
-}
-.is-pointer {
-    cursor: pointer !important;
-}
-.is-rounded {
-    border-radius: 100%;
-}
-.clearfix {
-    content: "";
-    display: table;
-    clear: both;
-}
-.is-hidden {
-    display: none !important;
-}
-@media screen and (max-width: 599px) {
-    .hide-xs {
-        display: none !important;
-    }
-}
-@media screen and (min-width: 600px) and (max-width: 899px) {
-    .hide-sm {
-        display: none !important;
-    }
-}
-@media screen and (min-width: 900px) and (max-width: 1199px) {
-    .hide-md {
-        display: none !important;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .hide-lg {
-        display: none !important;
-    }
-}
+
+/* Make the website mobile-friendly by using responsive design */
+/* Mobile styles */
+
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablet styles */
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Small screen styles */
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 30px;
+  }
+}
+
+/* Desktop styles */
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 1140px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Large screen styles */
+
+@media only screen and (min-width: 1201px) {
+  body {
+    font-size: 22px;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+  }
+}
+  /* Hide IRL Contacts */
+  .only-print {
+    display: none;
+ }
+
+/* Include great print styles by using print media query */
 @media print {
-    *,
-	*:before,
-	*:after,
-	*:first-letter,
-	p:first-line,
-	div:first-line,
-	blockquote:first-line,
-	li:first-line {
-		background: transparent !important;
-		color: #000 !important; 
-		box-shadow: none !important;
-		text-shadow: none !important;
-	}
+  /* Adjust font size for printing */
+  body { 
+  	margin-left: 2in;
+  	margin-right: 0.5in;
+  	font-family: Garamond, Georgia, Times, serif;
+  }
+  body, p, a {
+    font-size: 10pt;
+  }
+  
+  h1 {
+  	font-size: 15pt;
+  }
 
-@page {
-  size: 8.5in 11in;
-  margin: 70pt 120pt 70pt;
+h2 {
+  	font-size: 13pt;
+  }
+
+h3 {
+  	font-size: 12pt;
+  }
+
+  /* Remove background colors and images */
+  body, header, main, footer {
+    background-color: white !important;
+    background-image: none !important;
+  }
+
+  /* Set link colors to black */
+  a:link, a:visited {
+    color: black;
+  }
+
+  /* Hide Social Links */
+  .no-print {
+    display: none;
+ }
+   /* Show IRL Contacts */
+  .only-print {
+    display: block;
+ }
+  /* Add page numbers to the footer */
+  footer:after {
+    content: counter(page);
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
 }
-
-
-body {
- background: white;
- color: black;
- font-size: 95%;
-}
-
-hr {
-  border-top: solid .5px #000 !important;
-  page-break-after: never;
-}
-	a,
-	a:visited { text-decoration: underline; }
-
-	a[href]:after { content: " (" attr(href) ")"; }
-
-	abbr[title]:after { content: " (" attr(title) ")"; }
-
-	/*
-	 * Don't show links that are fragment identifiers,
-	 * or use the `javascript:` pseudo protocol
-	 */
-
-	a[href^="#"]:after,
-	a[href^="javascript:"]:after { content: ""; }
-
-	pre { white-space: pre-wrap !important; }
-
-	pre,
-	blockquote {
-		border: 1px solid #999;
-		page-break-inside: avoid;
-	}
-
-	/*
-	 * Printing Tables:
-	 * http://css-discuss.incutio.com/wiki/Printing_Tables
-	 */
-
-	thead { display: table-header-group; }
-
-	tr,
-	img { page-break-inside: avoid; }
-
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
-
-	h2,
-	h3 { page-break-after: avoid; }
-
-	/**
-	 * HIDE certain elements completely
-	 */
-	.nav, 
-	.contact,
-	.large {
-		display: none;
-	}
-
-	/**
-	 * Or go Nuclear and use this:
-	 * from: https://medium.com/@matuzo/i-totally-forgot-about-print-style-sheets-f1e6604cfd6#.9de6r4yhr
-	 *
-	 *   body > *:not(main) { display: none; }
-	 *
-	 */
-
-}
-
-
-
 </style>
-<head>
-<title>gabe tippery</title>
-</head>
 <body>
 <div class="container">
-	
-<!-- TOP --><div>
-<div class="row"><div class="col"><h1>Gabe Tippery</h1></div></div>
-<div class="row"><div class="col-3"><em>(he/him/his) <br/>Partner. Father. Designer. <br/>Person Living with Spinal Cord Injury.</em></div><div class="col-3"></div>
-  <div class="col" align="right"><div class="contact">Contact: 
-  	<a href="https://www.linkedin.com/in/gabetippery/"  target="_blank">LinkedIn</a> |
-    <a href="https://twitter.com/gabe_t"  target="_blank">Twitter</a> |
-    <a href="https://instagram.com/gabe_t"  target="_blank">Instagram</a> | 
-	<a href="https://www.joinclubhouse.com/@gabe_t"  target="_blank">Clubhouse</a> 
-  </div></div>
-</div></div>
 
-<!-- INTRODUCTION --><div><div class="row"><div class="col-3"></div><div class="col"><div class="large">
-	
-	<p>Hello!</p>
-	<p>Welcome to my online Curriculum Vitae.</p>
-	<p>Though I am not actively seeking a new role at the moment, I am always interested in meeting new people and learning about new opportunities.</p>
-	<p>Feel free to check out my info below and reach out on one of the platforms above if you think we may have a common conversation topic. Maybe your opportunity is exactly the thing I didn't realize I was seeking?</p>
-</div></div></div></div>
+<h1>Gabe Tippery</h1>
 
-<!-- PROFESSIONAL APPOINTMENTS --><hr/><div>
+<section class="no-print">
+<p><strong><a href="https://www.linkedin.com/in/gabetippery/">LinkedIn</a> | <a href="https://twitter.com/gabe_t">Twitter</a> | <a href="https://instagram.com/gabe_t">Instagram</a> | <a href="https://www.joinclubhouse.com/@gabe_t">Clubhouse</a></strong></p>
+</section>
+
+<section class="only-print">
+<p>tippery.2@osu.edu | linkedin.com/in/gabetippery/ | gabetippery.com</p>
+</section>
+
 	
-<div class="row">
-  <div class="col-3"><h2>Current Appointment</h2></div>
-  <div class="col-3">
-  	<p><b>Senior Undergraduate Academic Specialist</b></p>
-  	<p>Department of Design <br/>The Ohio State University <br/>Columbus, Ohio</p>
-	<p><em>May 2013 - Present</em></p>
-	</div>
-  <div class="col">
-  <p><b>Responsible for recruitment, admission, advising, retention, and enrichment of all students in the undergraduate academic programs housed under The Department of Design at The Ohio State University. Serve as the primary point of contact for undergraduate programs with in the unit to all internal and external stakeholders including future students, families, employers, alumni, staff in collaborating units such as College and University level student services, and the general public. Coordinate, manage, consult on and advocate for internal and external processes, communications, and development as they pertain to the administration of the undergraduate curriculum at the department level.</b></p>
-  <p><em>"I help undergraduate design students design their Ohio State experience. It is my job to make the university small."</em></p><hr>
-<p>
+<h2>Core Competencies</h2>
+
 <ul>
-	<li><b>Academic Advising: </b>Fosters student success through programs and strategies which support fulfillment of educational goals. Includes advising students on university policies, procedures, program and degree requirements and a range of other academic matters. Student orientation activities, materials preparation and distribution, logistics, teaching student survey courses and related actions are involved. Provides referrals to appropriate units for financial, mental health and other services. Includes collaboration with University Registrar, Student Financial Aid, University Bursar and other student support offices, and representing these services to students. Handles inquiries arriving via various channels, such as online, phone, mail, email and in-person.</li>
-	<li><b>Admissions and Recruitment: </b>Responsible for student recruiting programs, pre-application and pre-admission, admissions applications reviews, systems data inputs and maintenance, admissions recommendations and decisions, and related processes as they pertain to unit’s competitive admissions processes. Includes interactions with students, families, external organizations and within the university for information exchange and issues resolution. Develop, implement and administer plans, programs and events for general and targeted student recruitment in support of organizational goals.</li>
-	<li><b>Academic and Curricular Program Services: </b>Directly supports faculty and academic units in the development and delivery of educational offerings and programs offered by the university, ensuring support throughout the educational cycle from entry to graduation. Works with faculty to provide advice and coordination. Supports, coordinates and facilitates the implementation of various departmental curricula through service on standing and ad-hoc committees, as well as serving in various curricular job functions such as Transfer Credit Evaluator, Internship Coordinator, and Education Abroad Coordinator. It is not uncommon for me to attend meetings and update sessions on behalf of the Director of Undergraduate Studies, when they are unable to attend, as I work closely with them thought they are not my supervisor.</li>
-	<li><b>Registration and Records: </b>Responsible for processes related to academic records, academic progress, and enrollment data. Process systemic enrollments requiring system overrides due to curriculum constraints and enrollment management policies. Forecasts and plans enrollment in collaboration with faculty for decisions on number of class sections to be offered; provides data services internally and externally in compliance with policies and regulations; supports services related to enrollment, advising and eligibility determinations. Liaison with offices such as University Registrar, roles involved in classroom allocation, capacity planning, electronic and other forms of document management, etc. Ensures that class schedules are up-to-date and entered in systems, enrollment data is reported and communicated as requested, and assessments are completed within the scope of job functions.</li>
-	<li><b>Marketing and Communication: </b>Develops, implements, and oversees marketing and communications programs for the unit with long-and short-term strategies that support institutional priorities and business goals, while contributing to building the Ohio State brand. Manages the effective and efficient delivery of communications both internally and externally, via email, MS Teams, social media, and web platforms to further unit awareness, drive traffic to university and/or college/unit social media and/or web pages, and promote engagement towards other objectives. Collaborates across the enterprise on user experience, information architecture, and overall site content needs. Primary user and subject matter expert in web content management system within the unit, providing oversight and support while working closely with key stakeholders to ensure that web channel content is delivered with quality control, in compliance with policies and web standards and in support of business strategy and objectives. </li>
-</p>
-<p><b>PROFESSIONAL AFFILIATIONS</b> <br/>
-<b>Since 2018:</b> NACADA - The Global Community for Academic Advising <br/>
-<b>Since 2017:</b> Ohio Academic Advising Association (OHAAA) <br/>
-<b>Since 2013:</b> Academic Advising Assocation of The Ohio State University (ACADAOS) <br/>
-</p>
-	</div></div>
-<div class="row"><div class="col-3"><h3>Previous Appointments</h3></div><div class="col-3"><p><b>Adjunct Lecturer</b></p><p><em>2012-2014</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Introduction to Design Practice, Instructor of Record, AU 2012 to 2013 (Autumn Only)</li><li>Design History, Instructor of Record (Two Sections), SP 2013</li><li>Design Research I, Co-Instructor of Record, AU 2012</li><li>Design Research II, Co-Instructor of Record, AU 2012</li><li>Methods and Tools for Conducting Design Research, Assistant Instructor, AU 2012</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><p><b>Graduate Teaching Associate</b></p><p><em>2009-2012</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Drawing Systems for Designers, Instructor of Record, SP 2012</li><li>Visual Thinking & Problem Solving, Instructor of Record, WI 2012</li><li>Introduction to Design, Instructor of Record (Seven Quarters), 2009-2011</li></ul></div></div>
+<li>Program Administration</li>
+<li>Strategic Planning</li>
+<li>Creative Problem Solving</li>
+<li>Public Speaking</li>
+<li>Customer Service</li>
+<li>Collaborative Advocacy</li>
+</ul>
 
 	
+<h2>Experience</h2>
+
+<p><strong>Senior Undergraduate Academic Specialist,</strong> The Ohio State University, Department of Design<br/>
+<em>September 2022-Present</em> </p>
+
+<ul>
+<li>Redesigned College Survey course to meet new degree requirements and introduced the first BSD class on Ohio State&#8217;s new General Education curriculum.</li>
+<li>Established a strategic vision to expand Design major offerings to regional campus students and reduce potential time to degree for this population.</li>
+</ul>
+
+<p><strong>Undergraduate Academic Planning Specialist,</strong> The Ohio State University, Department of Design<br/>
+<em>January 2017-September 2022</em> </p>
+
+<ul>
+<li>Managed department schedule of classes, increasing first year curriculum capacity by 25%.</li>
+<li>Implemented department-wide common lunch and dinner periods to support student wellness.</li>
+<li>Redesigned the portfolio review process, transitioning it to a digital format, reducing costs and environmental impact.</li>
+<li>Managed and supported academic response to COVID&#8211;19, transitioning over 80 courses to online delivery.</li>
+<li>Implemented updates to three undergraduate curriculums to align with university level changes in General Education requirements.</li>
+<li>Negotiated a new collaboration between units, allowing design majors to earn an embedded History of Art minor, increasing enrollment by over 20%.</li>
+</ul>
+
+<p><strong>Academic Advisor and Staff Assistant,</strong> The Ohio State University, Department of Design<br/>
+<em>May 2013-January 2017</em> </p>
+
+<ul>
+<li>Provided academic advising, ensuring student success from recruitment to graduation.</li>
+<li>Planned, implemented, and executed admissions processes, new student orientation, internships, and education abroad programs.</li>
+<li>Launched a redesigned Design Thinking Minor, increasing enrollments and decreasing overhead.</li>
+<li>Improved collaboration and transparency with University and College Admissions offices, increasing admissions of targeted populations.</li>
+</ul>
+
+<p><strong>Adjunct Instructor,</strong> The Ohio State University, Department of Design<br/>
+<em>August 2012-May 2014</em></p>
+
+<ul>
+<li>Taught courses in Introduction to Design Practice, Design History, Design Research I &amp; II, and Methods and Tools for Conducting Design Research.</li>
+</ul>
+
+<p><strong>Graduate Teaching Associate,</strong> The Ohio State University, Department of Design<br/>
+<em>August 2009-August 2012</em> </p>
+
+<ul>
+<li>Taught courses in Introduction to Design, Visual Thinking and Problem Solving, and Drawing Systems for Designers.</li>
+</ul>
+
+<p><strong>Graduate Teaching Assistant,</strong> The Ohio State University, Department of Design<br/>
+<em>March 2010-June 2010</em></p>
+
+<ul>
+<li>Assisted in teaching course Advanced Interior Design III.</li>
+</ul>
+
+<p><strong>Undergraduate Teaching Assistant,</strong> The Ohio State University, Department of Design<br/>
+<em>March 2009-June 2009</em></p>
+
+<ul>
+<li>Assisted in teaching course Basic Interior Design III.</li>
+</ul>
+
+<p><strong>Sales Associate and Mechanic,</strong> Baer Wheels Bicycle Shop <em>June 2004-August 2004</em><br/>
+<strong>Assistant Store Manager,</strong> Cup O&#8217; Joe Coffee &amp; Dessert House <em>January 2000-January 2008</em><br/>
+<strong>On-Air Radio Host &amp; Programming Director,</strong> WXCU, Capital University <em>September 2000-June 2001</em><br/>
+<strong>Recreation Center General Manager,</strong> Capital University <em>September 1999-June 2001</em><br/>
+<strong>Load Supervisor,</strong> Roadway Package System <em>June 1999-August 1999</em><br/>
+<strong>Team Manager,</strong> Fazoli&#8217;s Italian Restaurant <em>June 1998-May 1999</em><br/>
+<strong>Server,</strong> Perkins Restaurant and Bakery <em>June 1997-May 1998</em><br/>
+<strong>Dishwasher &amp; Busser,</strong> Olive Garden <em>June 1996-May 1997</em><br/>
+<strong>Farm Hand,</strong> Arlan Spors Family Farm <em>June 1996-May 1999</em><br/>
+<strong>Christmas Tree Trimmer,</strong> Lovensheimer Christmas Tree Farm <em>June 1996-May 1999</em> </p>
+
+	
+<h2>Education</h2>
+
+<p><strong>MFA, Design Research and Development</strong> (Summa Cum Laude), The Ohio State University<br/>
+<em>August 2012</em> </p>
+
+<ul>
+<li>AIGA, Ohio State Student Group
+
+<ul>
+<li>2011&#8211;2012: Vice President of Communications</li>
+<li>2010&#8211;2011: Director of Social Media Relations</li>
+<li>2009&#8211;2010: Founding Member</li>
+</ul></li>
+<li>IIDA, Ohio State Student Group</li>
+<li>Design Circle, Graduate Student Member</li>
+</ul>
+
+<p><strong>BSD, Interior Design</strong> (Magna Cum Laude), The Ohio State University<br/>
+<em>June 2009</em> </p>
+
+<ul>
+<li>IIDA, Ohio State Student Group</li>
+<li>Design Circle, Student Member</li>
+</ul>
+
+<p><strong>Certificate, Audio and Music Production,</strong> The Recording Workshop<br/>
+<em>July 2003</em> </p>
+
+<p><strong>DNF, Radio, Television &amp; Digital Communication,</strong> Capital University<br/>
+<em>June 2001</em> </p>
+
+<ul>
+<li>Resident Advisor</li>
+<li>Recreation Center General Manager</li>
+<li>On-Air Radio Host &amp; Programming Director, WXCU Capital Radio</li>
+</ul>
+
+<p><strong>High School Diploma, College Preparatory,</strong> Melrose-Mindoro High School<br/>
+<em>June 1999</em> </p>
+
+<ul>
+<li>Marching Band, Section Leader</li>
+<li>Concert Band, President</li>
+<li>Dixieland Jazz Band</li>
+<li>Honors Band, First Chair</li>
+<li>Track and Field, Captain</li>
+<li>Yearbook Staff, Editor</li>
+<li>Academic Decathlon</li>
+<li>Spanish Club</li>
+<li>The Skamish</li>
+</ul>
+
+	
+<h2>Publications &amp; Presentations</h2>
+
+<h3>Thesis</h3>
+
+<ul>
+<li>Tippery, Gabriel J., <em><a href="http://osu.worldcat.org/oclc/823866412">Learning to Be in the Digital Era: A Holistic Learning Framework for Design Education.</a></em> Ohio State University, 2012.</li>
+</ul>
+
+<h3>Digital</h3>
+
+<ul>
+<li>Tippery, Gabe. <a href="https://u.osu.edu/hackingthethesis/"><em>Hacking The Thesis - A Methodology for Managing Your Thesis: An MFA Perspective.</em></a> The Ohio State University - U.OSU.EDU, Feb. 2014. Web.</li>
+<li>Tippery, Gabe. <a href="http://prttypictures.wordpress.com"><em>Prtty Pictures.</em></a> prttypictures.wordpress.com (blog), 2010&#8211;2014. Web.</li>
+</ul>
+
+<h3>Books</h3>
+
+<ul>
+<li>Mattos, A., et. al., <em><a href="http://www.lulu.com/shop/allen-cochran-and-gabe-tippery-and-melanie-dreser-and-ale-mattos/designing-a-design-curriculum/paperback/product-11261066.html;jsessionid=8A8F0298036108AB593301470D5145BF">Designing a Design Curriculum</a>,</em> The Ohio State University, 2010</li>
+<li>Tippery, G., Benzenberg, B., Cochran, A., <em><a href="http://www.lulu.com/shop/allen-cochran-and-beth-benzenberg-and-gabe-tippery/a-working-title/paperback/product-6497919.html">A Working Title,</a></em> The Ohio State University, 2010</li>
+<li>Ribeiro, B., et. al., <em><a href="http://www.lulu.com/shop/bruno-ribeiro/library-research-the-process-book/paperback/product-6137852.html">Library Research: The Process Book</a>,</em> The Ohio State University, 2009</li>
+</ul>
+
+<h3>Cited</h3>
+
+<ul>
+<li><em><a href="http://ulgsa.org/#/writingresearchtips/">Writing and Research Tips.</a>,</em> Graduate Students&#8217; Association, University of Lethbridge, Lethbridge, Alberta, Canada, 21 Jan. 2021, web.</li>
+<li>Green, Cable, <em><a href="https://itunes.apple.com/us/course/welcome-keynote-open-education/id938736298?i=323440000&amp;mt=2">Open Education: The Business &amp;Policy Case for OER</a>,</em> Innovate: Create. Office of Distance Education and ELearning - The Ohio State University, 25 Mar. 2014. Web.</li>
+<li>Haase, Jeffery, <em><a href="http://www.cmdconf.net/2013/makale/PDF/6.pdf">Multiple-Sensory Representation: Revealing User Experiences and Emotion in Interior Design</a>,</em> Fifth International Conference on Design Principles and Practices, Sapienza Università di Roma, Rome, Italy, February 2&#8211;4, 2011</li>
+<li>Piersanti, Joshua R., <em><a href="http://osu.worldcat.org/oclc/676694412">Online Critiques: Developing a Digital Tool to Improve the Experiences of Design Instructors and Students Critiquing Student Work in Design Courses</a>,</em> Ohio State University, 2010</li>
+<li>Cochran, A., Ganci, A., and Ribeiro, B. <em><a href="https://columbusupa.wordpress.com/events/">20 students - 20 thoughts on UX</a>,</em> Central Ohio Usability Professional Association (COUPA) Presentation, June 3, 2010</li>
+</ul>
+
+<h3>Talks</h3>
+
+<ul>
+<li><em>OnCourse Round Table - Making It Work,</em> Office of Undergraduate Education Advising Conference 2017, The Ohio State University, Columbus, Ohio, April 26, 2017</li>
+<li><em>VIZ - Curriculum Planning in the Age of Exploration (Co-Presenter with Cory Shain),</em> Innovate 2016, The Ohio State University, Columbus, Ohio, May 11, 2016</li>
+<li><em>Hacking The Thesis: A Methodology for Managing Your Thesis,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 5, 2014</li>
+<li><em>Hacking the MFA Design Thesis: A How To,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 8, 2013</li>
+<li><em>Going to Grad School: Why Designers Should,</em> OSU Design Circle Coffee-Talk Series, November 16, 2009</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 6, 2009</li>
+<li><em>Literal and Phenomenal Transparency in Architecture and Interiors</em>, Jeff Haase&#8217;s Sophomore Interior Design Studio, The Ohio State University, March 18, 2009</li>
+<li><em>Why Design School is Worth the Effort,</em> Tony Reynaldo&#8217;s Introduction to Design Lecture, The Ohio State University, March 11, 2009</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 7, 2008</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 10, 2007</li>
+</ul>
+
+	
+<h2>Honors &amp; Exhibitions</h2>
+
+<ul>
+<li><strong>Outstanding Staff Award,</strong> College of Arts and Sciences, The Ohio State University, Columbus, Ohio <em>May 2022</em></li>
+<li><strong>Mary Bailey Advising Award for Outstanding Academic Advising at Ohio State (Nominee),</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>April 2021</em></li>
+<li><strong>Digital Flagship Educator,</strong> ODEE, The Ohio State University, Columbus, Ohio <em>June 2018</em></li>
+<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>November 2016</em></li>
+<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>September 2015</em></li>
+<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>October 2014</em></li>
+<li><strong><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured in <a href="http://us2.campaign-archive1.com/?u=c812e18d654f1fe5373358d17&amp;id=bf5f689d2b&amp;e=254f5fe556">ASC Communications News &amp;Updates</a>,</strong> OSU Arts and Sciences Communications, Columbus, Ohio <em>April 2014</em></li>
+<li><strong><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured on <a href="https://u.osu.edu">u.osu.edu</a> front page,</strong> OSU Office of the CIO, Columbus, Ohio <em>April 2014</em></li>
+<li><strong>COTA Car Free Columbus Photo Competition Winner,</strong> Central Ohio Transit Authority, Columbus, Ohio <em>October 2012</em></li>
+<li><strong>Graduate Associate Teaching Award (Nominee),</strong> UCAT, The Ohio State University, Columbus, Ohio <em>April 2010</em></li>
+<li><strong>OSU Department of Design Spring Show,</strong> OSU Urban Art Space, Columbus, Ohio <em>June 2009</em></li>
+<li><strong>OSU Department of Art Photography Show,</strong> Silver Gallery, Columbus, Ohio <em>January 2008</em></li>
+<li><strong>OSU Department of Design Foundations Show,</strong> Hopkins Hall Gallery, Columbus, Ohio <em>June 2007</em></li>
+</ul>
+
+	
+<h2>Committee Service</h2>
+
+<h3>Active Committees</h3>
+
+<ul>
+<li><strong>Diversity and Belonging,</strong> Department of Design, The Ohio State University <em>Since 2019</em></li>
+<li><strong>Design Foundations,</strong> Department of Design, The Ohio State University <em>Since 2019</em></li>
+<li><strong>Web Advisory Board,</strong> College of Arts and Sciences, The Ohio State University <em>Since 2017</em></li>
+<li><strong>Social Media Group,</strong> College of Arts and Sciences, The Ohio State University <em>Since 2017</em></li>
+<li><strong>Committee on Undergraduate Advising,</strong> Office of Undergraduate Education, The Ohio State University <em>Since 2016</em></li>
+<li><strong>Undergraduate Studies,</strong> Department of Design, The Ohio State University <em>Since 2014</em></li>
+<li><strong>AHUM Recruitment,</strong> College of Arts and Sciences, The Ohio State University <em>Since 2014</em></li>
+<li><strong>Undergraduate Competitive Enrollment,</strong> Department of Design, The Ohio State University <em>Since 2013</em></li>
+<li><strong>Marketing and Recruitment,</strong> Department of Design, The Ohio State University <em>Since 2013</em></li>
+</ul>
+
+<h3>Previous Committees</h3>
+
+<ul>
+<li><strong>Department of Design Chair Search,</strong> Department of Design, The Ohio State University <em>2021&#8211;2022</em></li>
+<li><strong>Technology and Facilities,</strong> Department of Design, The Ohio State University <em>2020&#8211;2021</em></li>
+<li><strong>Cultural Events,</strong> Department of Design, The Ohio State University <em>2016&#8211;2019</em></li>
+<li><strong>Executive Board - Technology Committee Chair,</strong> Academic Advising Association of The Ohio State University, The Ohio State University <em>2016&#8211;2018</em></li>
+<li><strong>Student Advisory Committee: <em>DESIGN CIRCLE</em> - ex-officio,</strong> Department of Design, The Ohio State University <em>2015&#8211;2022</em></li>
+<li><strong>Request for Proposal Review Committee - Innovate Conference,</strong> Office of Distance Education and eLearning, The Ohio State University <em>2015&#8211;2017</em></li>
+<li><strong>Design Minor Curriculum,</strong> Department of Design, The Ohio State University <em>2013&#8211;2016</em></li>
+<li><strong>Design Foundations,</strong> Department of Design, The Ohio State University <em>2013&#8211;2015</em></li>
+<li><strong>Design Circle Staff Advisor,</strong> Student Life, The Ohio State University <em>2013&#8211;2014</em></li>
+<li><strong>Director of Social Media,</strong> Stir Symposium: October 7&#8211;9, 2011, The Ohio State University <em>2010&#8211;2011</em></li>
+</ul>
+
+<section class="no-print">
+---
+<p>(c) Gabe Tippery, <script>document.write(new Date().getFullYear())</script></p>
+</section>
 </div>
-	
-<!-- COMMITTEE SERVICE --><hr/><div>
-	
-<div class="row"><div class="col-3"><h2>Committee Service</h2></div><div class="col-3">
-<h3>Active Committees</h3></div><div class="col">
-	<p><b>2019-Current:</b> Diversity Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2019-Current:</b> Design Foundations Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2017-Current:</b> Web Advisory Board, ASC Communications, The College of Arts and Sciences, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2017-Current:</b> Social Media Group, ASC Communications, The College of Arts and Sciences, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2016-Current:</b> Committee on Undergraduate Advising, Office of Undergraduate Education, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2015-Current:</b> Student Advisory Committee: <em>DESIGN CIRCLE</em> - ex-officio, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2014-Current:</b> Undergraduate Studies Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2014-Current:</b> AHUM Recruitment Committee, College of Arts and Sciences, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2013-Current:</b> Undergraduate Enrollment Selection Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2013-Current:</b> Marketing and Recruitment, Department of Design, The Ohio State University, Columbus, Ohio</p>
-  </div></div>
-	
-<div class="row"><div class="col-3"></div><div class="col-3">
-<h3>Previous Committees</h3></div><div class="col">
-	<p><b>2021-2022:</b> Department of Design Chair Search Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2020-2021:</b> Technology and Facilities Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2016-2019:</b> Cultural Events Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2016-2018:</b> ACADAOS Executive Board - Technology Committee Chair, Academic Advising Association of The Ohio State University (ACADAOS), The Ohio State University, Columbus, Ohio</p>
-	<p><b>2015-2017:</b> Request for Proposal Review Committee, Innovate Conference, Office of Distance Education and eLearning,  The Ohio State University, Columbus, Ohio</p>
-	<p><b>2013-2016:</b> Design Minor Curriculum Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2013-2015:</b> Design Foundations Committee, Department of Design, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2013-2014:</b> Design Circle Staff Advisor, Student Life, The Ohio State University, Columbus, Ohio</p>
-	<p><b>2010-2011:</b> Director of Social Media, Stir Symposium: October 7-9, 2011, The Ohio State University, Columbus, Ohio</p>
-  </div></div>
-</div>
-  
-<!-- TEACHING EXPERIENCE --><hr/><div>
-	
-<div class="row"><div class="col-3"><h2>Teaching Experience</h2></div><div class="col-3">
-	<p><b>Senior Undergraduate Academic Specialist</b></p>
-	<p><em>2013-Present</em></p>
-  </div>
-  <div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p>
-  <ul>
-	<li>Internship Field Experiences, Instructor of Record, SP 2014 to Current</li>
-	<li>Freshman College Survey: Pre-Design, Instructor of Record, AU 2013 to Current (Autumn Only)</li>
-	<li>Study at a Foreign Institution, Instructor of Record, AU 2013 to Current</li>
-  </ul>
-  </div>
-</div>
-
-<div class="row"><div class="col-3"></div><div class="col-3"><p><b>Adjunct Lecturer</b></p><p><em>2012-2014</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Introduction to Design Practice, Instructor of Record, AU 2012 to 2013 (Autumn Only)</li><li>Design History, Instructor of Record (Two Sections), SP 2013</li><li>Design Research I, Co-Instructor of Record, AU 2012</li><li>Design Research II, Co-Instructor of Record, AU 2012</li><li>Methods and Tools for Conducting Design Research, Assistant Instructor, AU 2012</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><p><b>Graduate Teaching Associate</b></p><p><em>2009-2012</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Drawing Systems for Designers, Instructor of Record, SP 2012</li><li>Visual Thinking & Problem Solving, Instructor of Record, WI 2012</li><li>Introduction to Design, Instructor of Record (Seven Quarters), 2009-2011</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><p><b>Graduate Teaching Assistant</b></p><p><em>2010</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Advanced Interior Design III, Assistant Instructor, SP 2010</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><p><b>Undergraduate Teaching Assistant</b></p><p><em>2009</em></p></div><div class="col"><p>Department of Design, The Ohio State University, Columbus, Ohio</p><ul><li>Basic Interior Design III, Assistant Instructor, SP 2009</li></ul></div></div>
-</div>
-
-<!-- EDUCATION --><hr/><div>
-	
-<div class="row"><div class="col-3"><h2>Education</h2></div><div class="col-3"><b><em>Master of Fine Arts</em><br/>Design Research and Development</b><p><em>August 2012</em></p></div><div class="col"><p>The Ohio State University, Columbus, Ohio</p><p><em>Suma Cum Laude</em></p><p>Thesis: Tippery, Gabriel J., <em><a href="http://osu.worldcat.org/oclc/823866412">Learning to Be in the Digital Era: A Holistic Learning Framework for Design Education.</a></em> Ohio State University, 2012.</p><p>Activities and Societies:<br/><ul><li>AIGA, Ohio State Student Group</li><ul><li>2011-2012: Vice President of Communications</li><li>2010-2011: Director of Social Media Relations</li><li>2009-2010: Founding Member</li></ul><li>IIDA, Ohio State Student Group</li><li>Design Circle, Graduate Student Member</li></ul></p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><b><em>Bachelor of Science in Design</em><br/>Interior Design</b><p><em>June 2009</em></p></div><div class="col"><p>The Ohio State University, Columbus, Ohio</p><p><em>Magna Cum Laude</em></p><p>Activities and Societies:<br/><ul><li>IIDA, Ohio State Student Group</li><li>Design Circle, Student Member</li></ul></p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><b><em>Certificate</em><br/>Audio & Music Production</b><p><em>June 2003</em></p></div><div class="col"><p>The Recording Workshop, Chillicothe, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><b><em>DNF</em><br/>Radio, Television, and Digital Communication</b><p><em>1999-2002</em></p></div><div class="col"><p>Capital University, Bexley, Ohio</p><p>Activities and Societies:<br/><ul><li>Resident Advisor</li><li>Recreation Center General Manager</li><li>Radio Club</li></ul></p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-3"><b><em>Diploma</em><br/>High School</b><p><em>June 1999</em></p></div><div class="col"><p>Melrose-Mindoro High School, Melrose, Wisconsin</p><p><em>College Preparatory</em></p><p>Activities and Societies:<br/><ul><li>Marching Band</li><li>Concert Band</li><li>Dixieland Jazz Band</li><li>Honors Band</li><li>Track and Field</li><li>Yearbook Staff</li><li>Academic Decathlon</li><li>Spanish Club</li><li>The Skamish</li></ul></p></div></div>
-</div>
-
-<!-- PUBLICATIONS --><hr/><div>
-	
-<div class="row"><div class="col-3"><h2>Publications & Presentations</h2></div><div class="col-1"><h3>Thesis</h3></div><div class="col">
-  <ul>
-	<li>Tippery, Gabriel J., <em><a href="http://osu.worldcat.org/oclc/823866412">Learning to Be in the Digital Era: A Holistic Learning Framework for Design Education.</a></em> Ohio State University, 2012.</li>
-  </ul></div></div>
-	
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>Digital</h3></div><div class="col">
-  <ul>
-	<li>Tippery, Gabe. <a href="https://u.osu.edu/hackingthethesis/"><em>Hacking The Thesis - A Methodology for Managing Your Thesis: An MFA Perspective.</em></a> The Ohio State University - U.OSU.EDU, Feb. 2014. Web.</li>
-	<li>Tippery, Gabe. <a href="http://prttypictures.wordpress.com"><em>Prtty Pictures.</em></a> prttypictures.wordpress.com (blog), 2010-2014. Web.</li>
-  </ul></div></div>
-	
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>Books</h3></div><div class="col">
-  <ul>
-	<li>Mattos, A., et. al., <em><a href="http://www.lulu.com/shop/allen-cochran-and-gabe-tippery-and-melanie-dreser-and-ale-mattos/designing-a-design-curriculum/paperback/product-11261066.html;jsessionid=8A8F0298036108AB593301470D5145BF">Designing a Design Curriculum</a>,</em> The Ohio State University, 2010</li>
-	<li>Tippery, G., Benzenberg, B., Cochran, A., <em><a href="http://www.lulu.com/shop/allen-cochran-and-beth-benzenberg-and-gabe-tippery/a-working-title/paperback/product-6497919.html">A Working Title,</a></em> The Ohio State University, 2010</li>
-	<li>Ribeiro, B., et. al., <em><a href="http://www.lulu.com/shop/bruno-ribeiro/library-research-the-process-book/paperback/product-6137852.html">Library Research: The Process Book</a>,</em> The Ohio State University, 2009</li>
-  </ul></div></div>
-	
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>Cited</h3></div><div class="col">
-  <ul>
-	<li><em><a href="http://ulgsa.org/#/writingresearchtips/">Writing and Research Tips.</a>,</em> Graduate Students' Association, University of Lethbridge, Lethbridge, Alberta, Canada, 21 Jan. 2021, web.</li> 
-	<li>Green, Cable, <em><a href="https://itunes.apple.com/us/course/welcome-keynote-open-education/id938736298?i=323440000&mt=2" target="_blank" rel="noopener noreferrer">Open Education: The Business &Policy Case for OER</a>,</em> Innovate: Create. Office of Distance Education and ELearning - The Ohio State University, 25 Mar. 2014. Web.</li>
-	<li>Haase, Jeffery, <em><a href="http://www.cmdconf.net/2013/makale/PDF/6.pdf">Multiple-Sensory Representation: Revealing User Experiences and Emotion in Interior Design</a>,</em> Fifth International Conference on Design Principles and Practices, Sapienza Università di Roma, Rome, Italy, February 2-4, 2011</li>
-	<li>Piersanti, Joshua R., <em><a href="http://osu.worldcat.org/oclc/676694412">Online Critiques: Developing a Digital Tool to Improve the Experiences of Design Instructors and Students Critiquing Student Work in Design Courses</a>,</em> Ohio State University, 2010</li>
-	<li>Cochran, A., Ganci, A., and Ribeiro, B. <em><a href="https://columbusupa.wordpress.com/events/">20 students - 20 thoughts on UX</a>,</em> Central Ohio Usability Professional Association (COUPA) Presentation, June 3, 2010</li>
-  </ul></div></div>
-
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>Talks</h3></div><div class="col">
-  <ul>
-	<li><em>OnCourse Round Table - Making It Work,</em>  Office of Undergraduate Education Advising Conference 2017, The Ohio State University, Columbus, Ohio, April 26, 2017</li>
-	<li><em>VIZ - Curriculum Planning in the Age of Exploration (Co-Presenter with Cory Shain),</em> Innovate 2016, The Ohio State University, Columbus, Ohio, May 11, 2016</li>
-	<li><em>Hacking The Thesis: A Methodology for Managing Your Thesis,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 5, 2014</li>
-	<li><em>Hacking the MFA Design Thesis: A How To,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 8, 2013</li>
-	<li><em>Going to Grad School: Why Designers Should,</em> OSU Design Circle Coffee-Talk Series, November 16, 2009</li>
-	<li><em>Entrance Exam Q&A,</em> OSU Design Circle Department of Design Info Series, November 6, 2009</li>
-	<li><em>Literal and Phenomenal Transparency in Architecture and Interiors</em>, Jeff Haase's Sophomore Interior Design Studio, The Ohio State University, March 18, 2009</li>
-	<li><em>Why Design School is Worth the Effort,</em> Tony Reynaldo's Introduction to Design Lecture, The Ohio State University, March 11, 2009</li>
-	<li><em>Entrance Exam Q&A,</em> OSU Design Circle Department of Design Info Series, November 7, 2008</li>
-	<li><em>Entrance Exam Q&A,</em> OSU Design Circle Department of Design Info Series, November 10, 2007</li>
-  </ul></div></div>
-</div>
-
-<!-- HONORS AND EXHIBITIONS --><hr/><div>
-
-<div class="row"><div class="col-3"><h2>Honors & Exhibitions</h2></div><div class="col-1"><h3>2022</h3></div><div class="col"><ul>
-	<li>Outstanding Staff Award - May, College of Arts and Sciences, The Ohio State University, Columbus, Ohio</li>
-  </ul></div></div>
-	
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2021</h3></div><div class="col"><ul><li>Mary Bailey Advising Award for Outstanding Academic Advising at Ohio State (Nominee) - April, ACADAOS, The Ohio State University, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2018</h3></div><div class="col"><ul><li>Digital Flagship Educator - June, ODEE, The Ohio State University, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2016</h3></div><div class="col"><ul><li>Advisor of the Month - November, ACADAOS, The Ohio State University, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2015</h3></div><div class="col"><ul><li>Advisor of the Month - September, ACADAOS, The Ohio State University, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2014</h3></div><div class="col"><ul>
-	<li>Advisor of the Month - October, ACADAOS, The Ohio State University, Columbus, Ohio</li>
-	<li><em>Hacking the Thesis</em> Featured in <a href="http://us2.campaign-archive1.com/?u=c812e18d654f1fe5373358d17&id=bf5f689d2b&e=254f5fe556">ASC Communications News &Updates</a>, OSU Arts and Sciences Communications, Columbus, Ohio</li>
-	<li><em>Hacking the Thesis</em> Featured on <a href="https://u.osu.edu">u.osu.edu</a> front page, OSU Office of the CIO, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2012</h3></div><div class="col"><ul><li>COTA Car Free Columbus Photo Competition Winner, Central Ohio Transit Authority, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2010</h3></div><div class="col"><ul><li>Graduate Associate Teaching Award Nominee, UCAT, The Ohio State University, Columbus, Ohio</li></ul></div></div>
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2009</h3></div><div class="col"><ul><li>OSU Department of Design Spring Show, OSU Urban Art Space, Columbus, Ohio</li></ul></div></div> 
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2008</h3></div><div class="col"><ul><li>OSU Department of Art Photography Show, Silver Gallery, Columbus, Ohio</li></ul></div></div> 
-<div class="row"><div class="col-3"></div><div class="col-1"><h3>2007</h3></div><div class="col"><ul><li>OSU Department of Design Foundations Show, Hopkins Hall Gallery, Columbus, Ohio</li></ul></div></div> 
-</div>
-
-<!-- NON-ACADEMIC WORK --><hr/><div>
-<div class="row"><div class="col-3"><h2>Non-Academic Work</h2></div><div class="col-2"><h3>2000-2008</h3></div><div class="col"><p>Assistant Store Manager, Cup O' Joe Coffee & Dessert House, Columbus, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>2004</h3></div><div class="col"><p>Sales Associate and Mechanic, Baer Wheels Bicycle Shop, Columbus, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>2001</h3></div><div class="col"><p> <em>Louder than Words</em> Host & Programming Director, WXCU Capital University Radio, Bexley, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>2000-2001</h3></div><div class="col"><p> Resident Advisor, Capital University, Bexley, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1999-2001</h3></div><div class="col"> <p>General Manager, Capital University Recreation Center, Bexley, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1999</h3></div><div class="col"><p> Load Supervisor, Roadway Package System, Grove City, Ohio</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1998-1999</h3></div><div class="col"><p> Team Manager, Fazoli's Italian Restaurant, LaCrosse, Wisconsin</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1997-1998</h3></div><div class="col"><p> Server, Perkins Restaurant and Bakery, Black River Falls, Wisconsin</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1996-1997</h3></div><div class="col"><p> Dishwasher & Busser, Olive Garden, LaCrosse, Wisconsin</p></div></div>
-<div class="row"><div class="col-3"></div><div class="col-2"><h3>1996-1999</h3></div><div class="col"><p> Farm Hand, Arlan Spors Family Farm, Melrose, Wisconsin</p></div></div>
-</div>
-
-<!-- BOTTOM -->
-<div><hr/><p>(c) Gabe Tippery, <script>document.write(new Date().getFullYear())</script></p><br/><br/></div>
-</div></div>
 </body>
-
 </html>
-
-
-
-
-
