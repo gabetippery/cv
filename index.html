@@ -3,231 +3,89 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="creator" content="Marked.app"/>
-	<link href='http://fonts.googleapis.com/css2?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
 	<title>gabe tippery</title>
 </head>
 <style>
 .container {
   padding: 40px;
   margin: 0 auto;
-  width: 100%;
-  max-width: 960px; /* Set a maximum width for the container */
+  width: 90%;
+  max-width: 800px;
   background-color: white; 
 }
 
-/* Set default font family to a serif typeface */
 body {
-  font-family: 'Lato', Helvetica, Arial, sans-serif;
-  background-color: #F3F3F3; 
-  color: #283747;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, serif;
+  font-size: 100%;
+  font-weight: 500;
+  color: #444; 
 }
 
-/* Set font size, line height, and margin for paragraphs */
-p {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
+b {color: #111;}
+a:link, a:visited {color: red; text-decoration-line: none;}
+a:hover {background-color: pink;}
+a:link:active, a:visited:active {color: pink;}
 
-/* Set font size and line height for headings */
 h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-  
-}
+	font-size: 1.5em;
+	color: #111;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	}
+	
 h2 {
-  font-size: 1.7rem;
-  line-height: 1.2;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-  text-decoration: underline;
-}
-
-
-/* Set font size and line height for links */
-a {
-  color: #932432;
-  text-decoration: none;
-}
-
-/* Make the website mobile-friendly by using responsive design */
-/* Mobile styles */
-
-@media only screen and (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-
-  h1 {
-    font-size: 28px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-}
-
-/* Tablet styles */
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  body {
-    font-size: 18px;
-  }
-
-  .container {
-    max-width: 720px;
-  }
-
-  h1 {
-    font-size: 32px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
-
-  h2 {
-    font-size: 22px;
-    margin-top: 25px;
-    margin-bottom: 12px;
-  }
-}
-
-/* Small screen styles */
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .container {
-    max-width: 960px;
-    padding: 0 30px;
-  }
-}
-
-/* Desktop styles */
-
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  body {
-    font-size: 20px;
-  }
-
-  .container {
-    max-width: 1140px;
-  }
-
-  h1 {
-    font-size: 40px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-  }
-
-  h2 {
-    font-size: 28px;
-    margin-top: 35px;
-    margin-bottom: 20px;
-  }
-}
-
-/* Large screen styles */
-
-@media only screen and (min-width: 1201px) {
-  body {
-    font-size: 22px;
-  }
-
-  .container {
-    max-width: 1400px;
-  }
-
-  h1 {
-    font-size: 48px;
-    margin-top: 60px;
-    margin-bottom: 30px;
-  }
-
-  h2 {
-    font-size: 32px;
-    margin-top: 40px;
-    margin-bottom: 25px;
-  }
-}
-  /* Hide IRL Contacts */
-  .only-print {
-    display: none;
- }
-
-/* Include great print styles by using print media query */
-@media print {
-  /* Adjust font size for printing */
-  body { 
-  	margin-left: 2in;
-  	margin-right: 0.5in;
-  	font-family: Garamond, Georgia, Times, serif;
-  }
-  body, p, a {
-    font-size: 10pt;
-  }
-  
-  h1 {
-  	font-size: 15pt;
-  }
-
-h2 {
-  	font-size: 13pt;
-  }
-
+	padding-top: 2em;
+	font-size: 1.125em;
+	line-height: 1.7;
+	text-transform: uppercase;
+	color: #333;
+	text-decoration-line: overline;
+  	text-decoration-color: red; 
+  	text-decoration-style: wavy;
+  	text-decoration-thickness: 2px;
+	}
+	
 h3 {
-  	font-size: 12pt;
-  }
+	font-size: 1.0em;
+	color: #666;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	}	
+	
+.top-section {padding-bottom: 30px;}
+.hidden {display: none;}
 
-  /* Remove background colors and images */
-  body, header, main, footer {
-    background-color: white !important;
-    background-image: none !important;
-  }
+.nav {
+	margin-top: 1.5em;
+	font-size: .8em; 
+	text-decoration-color: #111;
+	}
+	
+.nav a {color: #111;}
 
-  /* Set link colors to black */
-  a:link, a:visited {
-    color: black;
-  }
-
-  /* Hide Social Links */
-  .no-print {
-    display: none;
- }
-   /* Show IRL Contacts */
-  .only-print {
-    display: block;
- }
-  /* Add page numbers to the footer */
-  footer:after {
-    content: counter(page);
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
-  }
+.time-span { 
+	font-family: "Source Code Pro", monospace;
+	font-size: .9em;
+	float: right;
+	padding-left: 50px;
+	color: #666;
 }
+
 </style>
-<body>
+
+<body id="top">
 <div class="container">
 
+<div class="top-section">
 <h1>Gabe Tippery</h1>
+Contact: <a href="mailto:gabe.tippery@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/gabetippery/">LinkedIn</a> 
+<br/>
+<div class="nav"><a href="#experience">Experience</a> | <a href="#education">Education</a> | <a href="#publications">Publications & Presentations</a> | <a href="#honors">Honors & Exhibitions</a> | <a href="#committee">Committee Service</a>
+</div>
 
-<section class="no-print">
-<p><strong><a href="https://www.linkedin.com/in/gabetippery/">LinkedIn</a> | <a href="https://twitter.com/gabe_t">Twitter</a> | <a href="https://instagram.com/gabe_t">Instagram</a>
-</section>
-
-<section class="only-print">
-<p>tippery.2@osu.edu | linkedin.com/in/gabetippery/ | gabetippery.com</p>
-</section>
-
-	
+<div class=hidden>
 <h2>Core Competencies</h2>
-
 <ul>
 <li>Program Administration</li>
 <li>Strategic Planning</li>
@@ -236,22 +94,18 @@ h3 {
 <li>Customer Service</li>
 <li>Collaborative Advocacy</li>
 </ul>
+</div>
 
-	
-<h2>Experience</h2>
+<h2 id="experience">Experience</h2>
 
-<p><strong>Senior Undergraduate Academic Specialist,</strong> The Ohio State University, Department of Design<br/>
-<em>September 2022-Present</em> </p>
-
+<div class="time-span">SEP 2022-Present</div><b>Senior Undergraduate Academic Specialist</b><br/>The Ohio State University, Department of Design
 <ul> 
 <li>Redesigned College Survey course to meet new degree requirements and introduced the first BSD class on Ohio State&#8217;s new General Education curriculum.</li>
 <li>Established a strategic vision to expand Design major offerings to regional campus students and reduce potential time to degree for this population.</li>
 <li>Managed a student employee on a project to digitally archive Undergraduate Capstone Projects from 2014-2023.</li>
 </ul>
 
-<p><strong>Undergraduate Academic Planning Specialist,</strong> The Ohio State University, Department of Design<br/>
-<em>January 2017-September 2022</em> </p>
-
+<div class="time-span">JAN 2017-SEP 2022</div><b>Undergraduate Academic Planning Specialist</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Managed department schedule of classes, increasing first year curriculum capacity by 25%.</li>
 <li>Implemented department-wide common lunch and dinner periods to support student wellness.</li>
@@ -261,9 +115,7 @@ h3 {
 <li>Negotiated a new collaboration between units, allowing design majors to earn an embedded History of Art minor, increasing enrollment by over 20%.</li>
 </ul>
 
-<p><strong>Academic Advisor and Staff Assistant,</strong> The Ohio State University, Department of Design<br/>
-<em>May 2013-January 2017</em> </p>
-
+<div class="time-span">MAY 2013-JAN 2017</div><b>Academic Advisor and Staff Assistant</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Provided academic advising, ensuring student success from recruitment to graduation.</li>
 <li>Planned, implemented, and executed admissions processes, new student orientation, internships, and education abroad programs.</li>
@@ -271,86 +123,68 @@ h3 {
 <li>Improved collaboration and transparency with University and College Admissions offices, increasing admissions of targeted populations.</li>
 </ul>
 
-<p><strong>Adjunct Instructor,</strong> The Ohio State University, Department of Design<br/>
-<em>August 2012-May 2014</em></p>
-
+<div class="time-span">AUG 2012-MAY 2014</div><b>Adjunct Instructor</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Taught courses in Introduction to Design Practice, Design History, Design Research I &amp; II, and Methods and Tools for Conducting Design Research.</li>
 </ul>
 
-<p><strong>Graduate Teaching Associate,</strong> The Ohio State University, Department of Design<br/>
-<em>August 2009-August 2012</em> </p>
-
+<div class="time-span">AUG 2009-AUG 2012</div><b>Graduate Teaching Associate</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Taught courses in Introduction to Design, Visual Thinking and Problem Solving, and Drawing Systems for Designers.</li>
 </ul>
 
-<p><strong>Graduate Teaching Assistant,</strong> The Ohio State University, Department of Design<br/>
-<em>March 2010-June 2010</em></p>
-
+<div class="time-span">MAR 2010-JUN 2010</div><b>Graduate Teaching Assistant</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Assisted in teaching course Advanced Interior Design III.</li>
 </ul>
 
-<p><strong>Undergraduate Teaching Assistant,</strong> The Ohio State University, Department of Design<br/>
-<em>March 2009-June 2009</em></p>
-
+<div class="time-span">MAR 2009-JUN 2009</div><b>Undergraduate Teaching Assistant</b><br/>The Ohio State University, Department of Design
 <ul>
 <li>Assisted in teaching course Basic Interior Design III.</li>
 </ul>
 
-<p><strong>Sales Associate and Mechanic,</strong> Baer Wheels Bicycle Shop <em>June 2004-August 2004</em><br/>
-<strong>Assistant Store Manager,</strong> Cup O&#8217; Joe Coffee &amp; Dessert House <em>January 2000-January 2008</em><br/>
-<strong>On-Air Radio Host &amp; Programming Director,</strong> WXCU, Capital University <em>September 2000-June 2001</em><br/>
-<strong>Recreation Center General Manager,</strong> Capital University <em>September 1999-June 2001</em><br/>
-<strong>Load Supervisor,</strong> Roadway Package System <em>June 1999-August 1999</em><br/>
-<strong>Team Manager,</strong> Fazoli&#8217;s Italian Restaurant <em>June 1998-May 1999</em><br/>
-<strong>Server,</strong> Perkins Restaurant and Bakery <em>June 1997-May 1998</em><br/>
-<strong>Dishwasher &amp; Busser,</strong> Olive Garden <em>June 1996-May 1997</em><br/>
-<strong>Farm Hand,</strong> Arlan Spors Family Farm <em>June 1996-May 1999</em><br/>
-<strong>Christmas Tree Trimmer,</strong> Lovensheimer Christmas Tree Farm <em>June 1996-May 1999</em> </p>
-
+<div class="time-span">JUN 2004-AUG 2004</div><b>Sales Associate and Mechanic,</b> Baer Wheels Bicycle Shop<br/>
+<div class="time-span">JAN 2000-JAN 2008</div><b>Assistant Store Manager,</b> Cup O&#8217; Joe Coffee &amp; Dessert House<br/>
+<div class="time-span">SEP 2000-JUN 2001</div><b>On-Air Radio Host &amp; Programming Director,</b> WXCU, Capital University<br/>
+<div class="time-span">SEP 1999-JUN 2001</div><b>Recreation Center General Manager,</b> Capital University<br/>
+<div class="time-span">JUN 1999-AUG 1999</div><b>Load Supervisor,</b> Roadway Package System<br/>
+<div class="time-span">JUN 1998-MAY 1999</div><b>Team Manager,</b> Fazoli&#8217;s Italian Restaurant<br/>
+<div class="time-span">JUN 1997-MAY 1998</div><b>Server,</b> Perkins Restaurant and Bakery<br/>
+<div class="time-span">JUN 1996-MAY 1997</div><b>Dishwasher &amp; Busser,</b> Olive Garden<br/>
+<div class="time-span">JUN 1996-MAY 1999</div><b>Farm Hand,</b> Arlan Spors Family Farm<br/>
+<div class="time-span">JUN 1996-MAY 1999</div><b>Christmas Tree Trimmer,</b> Lovensheimer Christmas Tree Farm 
 	
-<h2>Education</h2>
+<div class="nav"><a href="#top">Back to Top</a></div>
+<h2 id="education">Education</h2>
 
-<p><strong>MFA, Design Research and Development</strong> (Summa Cum Laude), The Ohio State University<br/>
-<em>August 2012</em> </p>
-
+<div class="time-span">AUG 2012</div><b>MFA, Design Research and Development</b> (Summa Cum Laude), The Ohio State University
 <ul>
 <li>AIGA, Ohio State Student Group
-
 <ul>
 <li>2011&#8211;2012: Vice President of Communications</li>
-<li>2010&#8211;2011: Director of Social Media Relations</li>
+<li>2010&#8211;2011: Director of Social Media</li>
 <li>2009&#8211;2010: Founding Member</li>
 </ul></li>
 <li>IIDA, Ohio State Student Group</li>
 <li>Design Circle, Graduate Student Member</li>
 </ul>
 
-<p><strong>BSD, Interior Design</strong> (Magna Cum Laude), The Ohio State University<br/>
-<em>June 2009</em> </p>
-
+<div class="time-span">JUN 2009</div><b>BSD, Interior Design</b> (Magna Cum Laude), The Ohio State University
 <ul>
 <li>IIDA, Ohio State Student Group</li>
 <li>Design Circle, Student Member</li>
 </ul>
 
-<p><strong>Certificate, Audio and Music Production,</strong> The Recording Workshop<br/>
-<em>July 2003</em> </p>
-
-<p><strong>DNF, Radio, Television &amp; Digital Communication,</strong> Capital University<br/>
-<em>June 2001</em> </p>
-
+<div class="time-span">JUL 2003</div><b>Certificate, Audio and Music Production,</b> The Recording Workshop<br/>
+<br/>
+<div class="time-span">JUN 2001</div><b>DNF, Radio, Television &amp; Digital Communication,</b> Capital University<br/>
 <ul>
 <li>Resident Advisor</li>
 <li>Recreation Center General Manager</li>
 <li>On-Air Radio Host &amp; Programming Director, WXCU Capital Radio</li>
 </ul>
 
-<p><strong>High School Diploma, College Preparatory,</strong> Melrose-Mindoro High School<br/>
-<em>June 1999</em> </p>
-
+<div class="time-span">JUN 1999</div><b>High School Diploma, College Preparatory,</b> Melrose-Mindoro High School
 <ul>
 <li>Marching Band, Section Leader</li>
 <li>Concert Band, President</li>
@@ -362,25 +196,22 @@ h3 {
 <li>Spanish Club</li>
 <li>The Skamish</li>
 </ul>
-
 	
-<h2>Publications &amp; Presentations</h2>
+<div class="nav"><a href="#top">Back to Top</a></div>
+<h2 id="publications">Publications &amp; Presentations</h2>
 
 <h3>Thesis</h3>
-
 <ul>
 <li>Tippery, Gabriel J., <em><a href="http://osu.worldcat.org/oclc/823866412">Learning to Be in the Digital Era: A Holistic Learning Framework for Design Education.</a></em> Ohio State University, 2012.</li>
 </ul>
 
 <h3>Digital</h3>
-
 <ul>
 <li>Tippery, Gabe. <a href="https://u.osu.edu/hackingthethesis/"><em>Hacking The Thesis - A Methodology for Managing Your Thesis: An MFA Perspective.</em></a> The Ohio State University - U.OSU.EDU, Feb. 2014. Web.</li>
 <li>Tippery, Gabe. <a href="http://prttypictures.wordpress.com"><em>Prtty Pictures.</em></a> prttypictures.wordpress.com (blog), 2010&#8211;2014. Web.</li>
 </ul>
 
 <h3>Books</h3>
-
 <ul>
 <li>Mattos, A., et. al., <em><a href="http://www.lulu.com/shop/allen-cochran-and-gabe-tippery-and-melanie-dreser-and-ale-mattos/designing-a-design-curriculum/paperback/product-11261066.html;jsessionid=8A8F0298036108AB593301470D5145BF">Designing a Design Curriculum</a>,</em> The Ohio State University, 2010</li>
 <li>Tippery, G., Benzenberg, B., Cochran, A., <em><a href="http://www.lulu.com/shop/allen-cochran-and-beth-benzenberg-and-gabe-tippery/a-working-title/paperback/product-6497919.html">A Working Title,</a></em> The Ohio State University, 2010</li>
@@ -388,85 +219,79 @@ h3 {
 </ul>
 
 <h3>Cited</h3>
-
 <ul>
 <li><em><a href="http://ulgsa.org/#/writingresearchtips/">Writing and Research Tips.</a>,</em> Graduate Students&#8217; Association, University of Lethbridge, Lethbridge, Alberta, Canada, 21 Jan. 2021, web.</li>
 <li>Green, Cable, <em><a href="https://itunes.apple.com/us/course/welcome-keynote-open-education/id938736298?i=323440000&amp;mt=2">Open Education: The Business &amp;Policy Case for OER</a>,</em> Innovate: Create. Office of Distance Education and ELearning - The Ohio State University, 25 Mar. 2014. Web.</li>
-<li>Haase, Jeffery, <em><a href="http://www.cmdconf.net/2013/makale/PDF/6.pdf">Multiple-Sensory Representation: Revealing User Experiences and Emotion in Interior Design</a>,</em> Fifth International Conference on Design Principles and Practices, Sapienza Università di Roma, Rome, Italy, February 2&#8211;4, 2011</li>
+<li>Haase, Jeffery, <em><a href="http://www.cmdconf.net/2013/makale/PDF/6.pdf">Multiple-Sensory Representation: Revealing User Experiences and Emotion in Interior Design</a>,</em> Fifth International Conference on Design Principles and Practices, Sapienza Università di Roma, Rome, Italy, FEB 2&#8211;4, 2011</li>
 <li>Piersanti, Joshua R., <em><a href="http://osu.worldcat.org/oclc/676694412">Online Critiques: Developing a Digital Tool to Improve the Experiences of Design Instructors and Students Critiquing Student Work in Design Courses</a>,</em> Ohio State University, 2010</li>
-<li>Cochran, A., Ganci, A., and Ribeiro, B. <em><a href="https://columbusupa.wordpress.com/events/">20 students - 20 thoughts on UX</a>,</em> Central Ohio Usability Professional Association (COUPA) Presentation, June 3, 2010</li>
+<li>Cochran, A., Ganci, A., and Ribeiro, B. <em><a href="https://columbusupa.wordpress.com/events/">20 students - 20 thoughts on UX</a>,</em> Central Ohio Usability Professional Association (COUPA) Presentation, JUN 3, 2010</li>
 </ul>
 
 <h3>Talks</h3>
-
 <ul>
-<li><em>OnCourse Round Table - Making It Work,</em> Office of Undergraduate Education Advising Conference 2017, The Ohio State University, Columbus, Ohio, April 26, 2017</li>
-<li><em>VIZ - Curriculum Planning in the Age of Exploration (Co-Presenter with Cory Shain),</em> Innovate 2016, The Ohio State University, Columbus, Ohio, May 11, 2016</li>
-<li><em>Hacking The Thesis: A Methodology for Managing Your Thesis,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 5, 2014</li>
-<li><em>Hacking the MFA Design Thesis: A How To,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, March 8, 2013</li>
-<li><em>Going to Grad School: Why Designers Should,</em> OSU Design Circle Coffee-Talk Series, November 16, 2009</li>
-<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 6, 2009</li>
-<li><em>Literal and Phenomenal Transparency in Architecture and Interiors</em>, Jeff Haase&#8217;s Sophomore Interior Design Studio, The Ohio State University, March 18, 2009</li>
-<li><em>Why Design School is Worth the Effort,</em> Tony Reynaldo&#8217;s Introduction to Design Lecture, The Ohio State University, March 11, 2009</li>
-<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 7, 2008</li>
-<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, November 10, 2007</li>
+<li><em>OnCourse Round Table - Making It Work,</em> Office of Undergraduate Education Advising Conference 2017, The Ohio State University, Columbus, Ohio, APR 26, 2017</li>
+<li><em>VIZ - Curriculum Planning in the Age of Exploration (Co-Presenter with Cory Shain),</em> Innovate 2016, The Ohio State University, Columbus, Ohio, MAY 11, 2016</li>
+<li><em>Hacking The Thesis: A Methodology for Managing Your Thesis,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, MAR 5, 2014</li>
+<li><em>Hacking the MFA Design Thesis: A How To,</em> OSU Design 6300 - Exploration in Graduate Design Studies, The Ohio State University, MAR 8, 2013</li>
+<li><em>Going to Grad School: Why Designers Should,</em> OSU Design Circle Coffee-Talk Series, NOV 16, 2009</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, NOV 6, 2009</li>
+<li><em>Literal and Phenomenal Transparency in Architecture and Interiors</em>, Jeff Haase&#8217;s Sophomore Interior Design Studio, The Ohio State University, MAR 18, 2009</li>
+<li><em>Why Design School is Worth the Effort,</em> Tony Reynaldo&#8217;s Introduction to Design Lecture, The Ohio State University, MAR 11, 2009</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, NOV 7, 2008</li>
+<li><em>Entrance Exam Q&amp;A,</em> OSU Design Circle Department of Design Info Series, NOV 10, 2007</li>
 </ul>
-
 	
-<h2>Honors &amp; Exhibitions</h2>
-
+<div class="nav"><a href="#top">Back to Top</a></div>
+<h2 id="honors">Honors &amp; Exhibitions</h2>
 <ul>
-<li><strong>Outstanding Staff Award,</strong> College of Arts and Sciences, The Ohio State University, Columbus, Ohio <em>May 2022</em></li>
-<li><strong>Mary Bailey Advising Award for Outstanding Academic Advising at Ohio State (Nominee),</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>April 2021</em></li>
-<li><strong>Digital Flagship Educator,</strong> ODEE, The Ohio State University, Columbus, Ohio <em>June 2018</em></li>
-<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>November 2016</em></li>
-<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>September 2015</em></li>
-<li><strong>Advisor of the Month,</strong> ACADAOS, The Ohio State University, Columbus, Ohio <em>October 2014</em></li>
-<li><strong><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured in <a href="http://us2.campaign-archive1.com/?u=c812e18d654f1fe5373358d17&amp;id=bf5f689d2b&amp;e=254f5fe556">ASC Communications News &amp;Updates</a>,</strong> OSU Arts and Sciences Communications, Columbus, Ohio <em>April 2014</em></li>
-<li><strong><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured on <a href="https://u.osu.edu">u.osu.edu</a> front page,</strong> OSU Office of the CIO, Columbus, Ohio <em>April 2014</em></li>
-<li><strong>COTA Car Free Columbus Photo Competition Winner,</strong> Central Ohio Transit Authority, Columbus, Ohio <em>October 2012</em></li>
-<li><strong>Graduate Associate Teaching Award (Nominee),</strong> UCAT, The Ohio State University, Columbus, Ohio <em>April 2010</em></li>
-<li><strong>OSU Department of Design Spring Show,</strong> OSU Urban Art Space, Columbus, Ohio <em>June 2009</em></li>
-<li><strong>OSU Department of Art Photography Show,</strong> Silver Gallery, Columbus, Ohio <em>January 2008</em></li>
-<li><strong>OSU Department of Design Foundations Show,</strong> Hopkins Hall Gallery, Columbus, Ohio <em>June 2007</em></li>
+<li><div class="time-span">MAY 2022</div><b>Outstanding Staff Award,</b> College of Arts and Sciences, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">APR 2021</div><b>Mary Bailey Advising Award for Outstanding Academic Advising at Ohio State (Nominee),</b> ACADAOS, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">JUN 2018</div><b>Digital Flagship Educator,</b> ODEE, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">NOV 2016</div><b>Advisor of the Month,</b> ACADAOS, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">SEP 2015</div><b>Advisor of the Month,</b> ACADAOS, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">OCT 2014</div><b>Advisor of the Month,</b> ACADAOS, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">APR 2014</div><b><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured in <a href="http://us2.campaign-archive1.com/?u=c812e18d654f1fe5373358d17&amp;id=bf5f689d2b&amp;e=254f5fe556">ASC Communications News &amp;Updates</a>,</b> OSU Arts and Sciences Communications, Columbus, Ohio</li>
+<li><div class="time-span">APR 2014</div><b><a href="http://www.hackingthethesis.com"><em>Hacking the Thesis</em></a> Featured on <a href="https://u.osu.edu">u.osu.edu</a> front page,</b> OSU Office of the CIO, Columbus, Ohio</li>
+<li><div class="time-span">OCT 2012</div><b>COTA Car Free Columbus Photo Competition Winner,</b> Central Ohio Transit Authority, Columbus, Ohio</li>
+<li><div class="time-span">APR 2010</div><b>Graduate Associate Teaching Award (Nominee),</b> UCAT, The Ohio State University, Columbus, Ohio</li>
+<li><div class="time-span">JUN 2009</div><b>OSU Department of Design Spring Show,</b> OSU Urban Art Space, Columbus, Ohio</li>
+<li><div class="time-span">JAN 2008</div><b>OSU Department of Art Photography Show,</b> Silver Gallery, Columbus, Ohio</li>
+<li><div class="time-span">JUN 2007</div><b>OSU Department of Design Foundations Show,</b> Hopkins Hall Gallery, Columbus, Ohio</li>
 </ul>
-
 	
-<h2>Committee Service</h2>
+<div class="nav"><a href="#top">Back to Top</a></div>
+<h2 id="committee">Committee Service</h2>
 
 <h3>Active Committees</h3>
-
 <ul>
-<li><strong>Diversity and Belonging,</strong> Department of Design, The Ohio State University <em>Since 2019</em></li>
-<li><strong>Design Foundations,</strong> Department of Design, The Ohio State University <em>Since 2019</em></li>
-<li><strong>Undergraduate Studies,</strong> Department of Design, The Ohio State University <em>Since 2014</em></li>
-<li><strong>AHUM Recruitment,</strong> College of Arts and Sciences, The Ohio State University <em>Since 2014</em></li>
-<li><strong>Undergraduate Competitive Enrollment,</strong> Department of Design, The Ohio State University <em>Since 2013</em></li>
-<li><strong>Marketing and Recruitment,</strong> Department of Design, The Ohio State University <em>Since 2013</em></li>
+<li><div class="time-span">Since 2019</div><b>Diversity and Belonging,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">Since 2019</div><b>Design Foundations,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">Since 2014</div><b>Undergraduate Studies,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">Since 2014</div><b>AHUM Recruitment,</b> College of Arts and Sciences, The Ohio State University</li>
+<li><div class="time-span">Since 2013</div><b>Undergraduate Competitive Enrollment,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">Since 2013</div><b>Marketing and Recruitment,</b> Department of Design, The Ohio State University</li>
 </ul>
 
 <h3>Previous Committees</h3>
-
 <ul>
-<li><strong>Committee on Undergraduate Advising,</strong> Office of Undergraduate Education, The Ohio State University <em>2016&#8211;2023</em></li>
-<li><strong>Department of Design Chair Search,</strong> Department of Design, The Ohio State University <em>2021&#8211;2022</em></li>
-<li><strong>Web Advisory Board,</strong> College of Arts and Sciences, The Ohio State University 2017-2022</li>
-<li><strong>Social Media Group,</strong> College of Arts and Sciences, The Ohio State University 2017-2022</li>
-<li><strong>Technology and Facilities,</strong> Department of Design, The Ohio State University <em>2020&#8211;2021</em></li>
-<li><strong>Cultural Events,</strong> Department of Design, The Ohio State University <em>2016&#8211;2019</em></li>
-<li><strong>Executive Board - Technology Committee Chair,</strong> Academic Advising Association of The Ohio State University, The Ohio State University <em>2016&#8211;2018</em></li>
-<li><strong>Student Advisory Committee: <em>DESIGN CIRCLE</em> - ex-officio,</strong> Department of Design, The Ohio State University <em>2015&#8211;2022</em></li>
-<li><strong>Request for Proposal Review Committee - Innovate Conference,</strong> Office of Distance Education and eLearning, The Ohio State University <em>2015&#8211;2017</em></li>
-<li><strong>Design Minor Curriculum,</strong> Department of Design, The Ohio State University <em>2013&#8211;2016</em></li>
-<li><strong>Design Foundations,</strong> Department of Design, The Ohio State University <em>2013&#8211;2015</em></li>
-<li><strong>Design Circle Staff Advisor,</strong> Student Life, The Ohio State University <em>2013&#8211;2014</em></li>
-<li><strong>Director of Social Media,</strong> Stir Symposium: October 7&#8211;9, 2011, The Ohio State University <em>2010&#8211;2011</em></li>
+<li><div class="time-span">2016&#8211;2023</div><b>Committee on Undergraduate Advising,</b> Office of Undergraduate Education, The Ohio State University</li>
+<li><div class="time-span">2021&#8211;2022</div><b>Department of Design Chair Search,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2017&#8211;2022</div><b>Web Advisory Board,</b> College of Arts and Sciences, The Ohio State University</li>
+<li><div class="time-span">2017&#8211;2022</div><b>Social Media Group,</b> College of Arts and Sciences, The Ohio State University</li>
+<li><div class="time-span">2020&#8211;2021</div><b>Technology and Facilities,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2016&#8211;2019</div><b>Cultural Events,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2016&#8211;2018</div><b>Executive Board - Technology Committee Chair,</b> Academic Advising Association of The Ohio State University, The Ohio State University</li>
+<li><div class="time-span">2015&#8211;2022</div><b>Student Advisory Committee: <em">DESIGN CIRCLE</em> - ex-officio,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2015&#8211;2017</div><b>Request for Proposal Review Committee - Innovate Conference,</b> Office of Distance Education and eLearning, The Ohio State University</li>
+<li><div class="time-span">2013&#8211;2016</div><b>Design Minor Curriculum,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2013&#8211;2015</div><b>Design Foundations,</b> Department of Design, The Ohio State University</li>
+<li><div class="time-span">2013&#8211;2014</div><b>Design Circle Staff Advisor,</b> Student Life, The Ohio State University</li>
+<li><div class="time-span">2010&#8211;2011</div><b>Director of Social Media,</b> Stir Symposium: OCT 7&#8211;9, 2011, The Ohio State University</li>
 </ul>
 
-<section class="no-print">
----
-<p>(c) Gabe Tippery, <script>document.write(new Date().getFullYear())</script></p>
-</section>
-</div>
+<div class="nav"><a href="#top">Back to Top</a>
+<hr/>
+(c) Gabe Tippery, <script>document.write(new Date().getFullYear())</script>
+</div></div>
 </body>
 </html>
