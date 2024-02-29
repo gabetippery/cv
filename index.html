@@ -291,6 +291,13 @@ Contact: <a href="mailto:gabe.tippery@gmail.com">Email</a> | <a href="https://ww
 
 <div class="nav"><a href="#top">Back to Top</a>
 <hr/>
+<div class="time-span"><script>
+  var currentDate = new Date();
+  var monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  var monthName = monthNames[currentDate.getMonth()];
+  var year = currentDate.getFullYear();
+  document.write("UPDATED: " + monthName +"_"+ year);
+ </script></div> 	
 (c) Gabe Tippery, <script>document.write(new Date().getFullYear())</script>
 </div></div>
 </body>
